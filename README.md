@@ -1,6 +1,6 @@
 <h1>Sabor Express</h1>
 
-<h2>🤔🤔 Sobre</h2>
+<h2>🤔 Sobre</h2>
 <p>Se trata de um pequeno projeto para visualização, cadastro e alteração de restaurantes em um sistema Python, utiliza condicionais, funções e bibliotecas.</p>
 
 ## 🚀🚀 Tecnologias
