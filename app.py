@@ -24,7 +24,8 @@ def exibir_opcoes():
     print('1. Cadastrar Restaurante')
     print('2. Listar Restaurante')
     print('3. Alternar estado do Restaurante')
-    print('4. Sair\n')
+    print('4. Alterar nome do Restaurante')
+    print('5. Sair\n')
 
 
 def finalizar_app():
@@ -101,6 +102,23 @@ def listar_restaurantes():
     voltar_ao_menu_principal()
 
 
+def alterar_nome_restaurante():
+    exibir_subtitulo('Alterar nome do restaurante')
+    nome_restaurante = input(
+        'Digite o nome do restaurante que deseja alterar o nome: ')
+    restaurante_encontrado = False
+    for restaurante in restaurantes:
+        if nome_restaurante == restaurante['nome']:
+            restaurante_encontrado = True
+            novo_nome = input('Digite o novo nome do restaurante: ')
+            restaurante['nome'] = novo_nome
+            print(
+                f'O nome do restaurante {nome_restaurante} foi alterado para {novo_nome} com sucesso!')
+    if not restaurante_encontrado:
+        print('O restaurante não foi encontrado')
+    voltar_ao_menu_principal()
+
+
 def alternar_estado_restaurante():
     '''Essa função é responsável por alternar o estado do restaurante'''
 
@@ -146,6 +164,8 @@ def escolher_opcao():
         elif opcao_escolhida == 3:
             alternar_estado_restaurante()
         elif opcao_escolhida == 4:
+            alterar_nome_restaurante()
+        elif opcao_escolhida == 5:
             finalizar_app()
         else:
             opcao_invalida()
