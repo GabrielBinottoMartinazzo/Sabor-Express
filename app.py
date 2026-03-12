@@ -113,9 +113,18 @@ def alternar_estado_restaurante():
         if nome_restaurante == restaurante['nome']:
             restaurante_encontrado = True
             restaurante['ativo'] = not restaurante['ativo']
-            mensagem = f'O restaurante {nome_restaurante} foi ativado com sucesso' if restaurante[
-                'ativo'] else f'O restaurante {nome_restaurante} foi desativado com sucesso'
-            print(mensagem)
+            escolha = input(
+                'Você gostaria de ativar ou desativar o restaurante? ')
+            if escolha.lower() == 'ativar':
+                restaurante['ativo'] = True
+                print(
+                    f'O restaurante {nome_restaurante} foi ativado com sucesso!')
+            elif escolha.lower() == 'desativar':
+                restaurante['ativo'] == False
+                print(
+                    'O restaurante {nome_restaurante} foi desativado com sucesso!')
+            else:
+                print('Opção inválida! O estado do restaurante não foi alterado.')
 
     if not restaurante_encontrado:
         print('O restaurante não foi encontrado')
