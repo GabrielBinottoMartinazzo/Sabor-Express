@@ -103,6 +103,10 @@ def listar_restaurantes():
 
 
 def alterar_nome_restaurante():
+    '''Essa função é responsável por alterar o nome de algum restaurante já existente,
+       recebe como dados de input: nome do restaurante que deseja alterar, nome novo
+       output: muda o nome do restaurante já existente para um novo nome'''
+
     exibir_subtitulo('Alterar nome do restaurante')
     nome_restaurante = input(
         'Digite o nome do restaurante que deseja alterar o nome: ')
